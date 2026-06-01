@@ -1,43 +1,68 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
   import { EditorView, basicSetup } from 'codemirror';
-  import { javascript } from '@codemirror/lang-javascript';
+  import { html } from '@codemirror/lang-html';
   import { oneDark } from '@codemirror/theme-one-dark';
 
   let editorElement;
   let view;
-  let previewOutput = $state('');
+  let previewContainer;
+  let shadowRoot;
+
+  const initialCode = `<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: lightblue;
+    }
+    h1 {
+      color: white;
+      text-align: center;
+    }
+    p {
+      font-family: verdana;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>My First CSS Example</h1>
+  <p>This is a paragraph.</p>
+</body>
+</html>`;
 
   function runCode(code) {
-    let output = '';
-    const originalLog = console.log;
-    const originalError = console.error;
+    if (!shadowRoot) return;
 
-    console.log = (...args) => {
-      output += args.map(a => typeof a === 'object' ? JSON.stringify(a, null, 2) : String(a)).join(' ') + '\n';
-    };
-    console.error = (...args) => {
-      output += 'Error: ' + args.join(' ') + '\n';
-    };
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(code, 'text/html');
 
-    try {
-      new Function(code)();
-    } catch (e) {
-      output += 'Fout: ' + e.message + '\n';
-    } finally {
-      console.log = originalLog;
-      console.error = originalError;
-    }
+    let styles = Array.from(doc.querySelectorAll('style'))
+      .map(s => s.textContent)
+      .join('\n');
 
-    previewOutput = output;
+    // Belangrijke fix: vervang 'body' door ':host'
+    styles = styles.replace(/body\s*\{/gi, ':host {'); 
+
+    const content = doc.body.innerHTML || code;
+
+    shadowRoot.innerHTML = `
+      <style>
+        ${styles}
+      </style>
+      ${content}
+    `;
   }
 
   onMount(() => {
+    shadowRoot = previewContainer.attachShadow({ mode: 'open' });
+
     view = new EditorView({
-      doc: '// Schrijf hier je code\nconsole.log("Hello world!");',
+      doc: initialCode,
       extensions: [
         basicSetup,
-        javascript(),
+        html(),
         oneDark,
         EditorView.updateListener.of((update) => {
           if (update.docChanged) {
@@ -48,7 +73,7 @@
       parent: editorElement,
     });
 
-    runCode(view.state.doc.toString());
+    runCode(initialCode);
   });
 
   onDestroy(() => {
@@ -71,9 +96,9 @@
         <h1 class="text-sm font-bold px-3 py-2 bg-gray-300 rounded-t-md">Dit is de code</h1>
         <div bind:this={editorElement} class="flex-1 overflow-auto" />
       </div>
-      <div class="bg-gray-200 rounded-md w-full h-full flex flex-col">
+      <div class="bg-gray-200 rounded-md w-full h-full flex flex-col overflow-hidden">
         <h1 class="text-sm font-bold px-3 py-2 bg-gray-300 rounded-t-md">Dit is de preview van de code</h1>
-        <pre class="flex-1 p-3 font-mono text-sm whitespace-pre-wrap overflow-auto">{previewOutput}</pre>
+        <div bind:this={previewContainer} class="flex-1 overflow-auto p-2 bg-white"></div>
       </div>
       <div class="bg-gray-200 rounded-md w-full h-full"></div>
       <div class="bg-gray-200 rounded-md w-full h-full"></div>
