@@ -47,7 +47,7 @@
     {
       "title": "12. Transitions",
       "properties": ["transition", "transition-duration", "transition-delay"]
-    },
+    },  
     {
       "title": "13. Animations",
       "properties": ["animation", "animation-name", "animation-duration", "animation-timing-function"]
