@@ -1,0 +1,72 @@
+{
+  "categories": [
+    {
+      "title": "1. Selectors",
+      "properties": ["element", "class", "id", "attribute selectors", "pseudo-classes", "pseudo-elements"]
+    },
+    {
+      "title": "2. Colors & Backgrounds",
+      "properties": ["color", "background", "background-color", "background-image", "background-size", "background-position"]
+    },
+    {
+      "title": "3. Text & Fonts",
+      "properties": ["font-family", "font-size", "font-weight", "line-height", "text-align", "text-decoration", "text-transform"]
+    },
+    {
+      "title": "4. Box Model",
+      "properties": ["width", "height", "margin", "padding", "border", "box-sizing"]
+    },
+    {
+      "title": "5. Display & Visibility",
+      "properties": ["display", "visibility", "opacity", "overflow"]
+    },
+    {
+      "title": "6. Positioning",
+      "properties": ["position", "top", "right", "bottom", "left", "z-index"]
+    },
+    {
+      "title": "7. Flexbox",
+      "properties": ["display: flex", "flex-direction", "justify-content", "align-items", "flex-wrap", "gap"]
+    },
+    {
+      "title": "8. Grid",
+      "properties": ["display: grid", "grid-template-columns", "grid-template-rows", "grid-area", "gap"]
+    },
+    {
+      "title": "9. Lists",
+      "properties": ["list-style", "list-style-type", "list-style-position"]
+    },
+    {
+      "title": "10. Tables",
+      "properties": ["border-collapse", "border-spacing", "table-layout"]
+    },
+    {
+      "title": "11. Transforms",
+      "properties": ["transform", "transform-origin"]
+    },
+    {
+      "title": "12. Transitions",
+      "properties": ["transition", "transition-duration", "transition-delay"]
+    },
+    {
+      "title": "13. Animations",
+      "properties": ["animation", "animation-name", "animation-duration", "animation-timing-function"]
+    },
+    {
+      "title": "14. Responsive Design",
+      "properties": ["media queries", "container queries", "aspect-ratio"]
+    },
+    {
+      "title": "15. Effects",
+      "properties": ["box-shadow", "text-shadow", "filter", "backdrop-filter"]
+    },
+    {
+      "title": "16. Cursor & User Interaction",
+      "properties": ["cursor", "pointer-events", "user-select"]
+    },
+    {
+      "title": "17. Advanced Layout",
+      "properties": ["float", "clear", "object-fit", "object-position"]
+    }
+  ]
+}
