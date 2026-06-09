@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "title": "Font Families",
+    "description": "Add a .mono CSS rule with Courier New as the font family (with fallbacks).",
+    "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.serif {\n  /* Times New Roman with fallbacks */\n}\n\n.sans {\n  /* Arial with fallbacks */\n}\n\n/* add .mono rule here */\n</style>\n</head>\n<body>\n\n<p class=\"serif\">This is a serif font (Times New Roman).</p>\n<p class=\"sans\">This is a sans-serif font (Arial).</p>\n<p class=\"mono\">This is a monospace font (Courier New).</p>\n\n</body>\n</html>",
+    "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.serif {\n  font-family: \"Times New Roman\", Times, serif;\n}\n\n.sans {\n  font-family: Arial, Helvetica, sans-serif;\n}\n\n.mono {\n  font-family: \"Courier New\", Courier, monospace;\n}\n</style>\n</head>\n<body>\n\n<p class=\"serif\">This is a serif font (Times New Roman).</p>\n<p class=\"sans\">This is a sans-serif font (Arial).</p>\n<p class=\"mono\">This is a monospace font (Courier New).</p>\n\n</body>\n</html>",
+    "checks": [
+      {
+        "description": "Has a .mono rule",
+        "pattern": "\\.mono\\s*\\{"
+      },
+      {
+        "description": "Uses Courier New font",
+        "pattern": "Courier New"
+      },
+      {
+        "description": "Includes monospace fallback",
+        "pattern": "monospace"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Box Model",
+    "description": "Give the .box element a padding of 20px, a margin of 10px, and a 2px solid border.",
+    "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.box {\n  background-color: lightblue;\n  /* add padding, margin, and border here */\n}\n</style>\n</head>\n<body>\n\n<div class=\"box\">I am a box!</div>\n\n</body>\n</html>",
+    "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.box {\n  background-color: lightblue;\n  padding: 20px;\n  margin: 10px;\n  border: 2px solid black;\n}\n</style>\n</head>\n<body>\n\n<div class=\"box\">I am a box!</div>\n\n</body>\n</html>",
+    "checks": [
+      {
+        "description": "Has padding of 20px",
+        "pattern": "padding:\\s*20px"
+      },
+      {
+        "description": "Has margin of 10px",
+        "pattern": "margin:\\s*10px"
+      },
+      {
+        "description": "Has a solid border",
+        "pattern": "border:.*solid"
+      }
+    ]
+  },
+
+
+ {
+  "id": 3,
+  "title": "Display Property",
+  "description": "Use display:inline, display:block, and display:none to control how elements are shown.",
+  "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nli {\n  display: inline;\n}\n\nspan {\n  background-color: yellow;\n  display: block;\n}\n\n.hidden {\n  display: none;\n}\n</style>\n</head>\n<body>\n\n<ul>\n  <li>Home</li>\n  <li>About</li>\n  <li>Contact</li>\n</ul>\n\n<p>These spans are <span>now</span> <span>block</span> elements.</p>\n\n<p class=\"hidden\">This paragraph is hidden.</p>\n\n</body>\n</html>",
+  "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nli {\n  display: inline;\n}\n\nspan {\n  background-color: yellow;\n  display: block;\n}\n\n.hidden {\n  display: none;\n}\n</style>\n</head>\n<body>\n\n<ul>\n  <li>Home</li>\n  <li>About</li>\n  <li>Contact</li>\n</ul>\n\n<p>These spans are <span>now</span> <span>block</span> elements.</p>\n\n<p class=\"hidden\">This paragraph is hidden.</p>\n\n</body>\n</html>",
+  "checks": [
+    {
+      "description": "Uses display inline",
+      "pattern": "display\\s*:\\s*inline"
+    },
+    {
+      "description": "Uses display block",
+      "pattern": "display\\s*:\\s*block"
+    },
+    {
+      "description": "Uses display none",
+      "pattern": "display\\s*:\\s*none"
+    }
+  ]
+},
+
+ {
+  "id": 4,
+  "title": "Styled Table",
+  "description": "Complete the CSS to create a styled table with borders, padding, a green header, and alternating row colors.",
+  "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\ntable {\n  /* border-collapse, width */\n}\n\nth, td {\n  /* border, padding */\n}\n\nth {\n  /* background-color, color, text-align */\n}\n\ntr:nth-child(even) {\n  /* background-color */\n}\n</style>\n</head>\n<body>\n\n<table>\n  <tr><th>Name</th><th>Age</th><th>City</th></tr>\n  <tr><td>Alice</td><td>28</td><td>London</td></tr>\n  <tr><td>Bob</td><td>34</td><td>Paris</td></tr>\n  <tr><td>Carol</td><td>22</td><td>Berlin</td></tr>\n  <tr><td>Dave</td><td>45</td><td>Madrid</td></tr>\n</table>\n\n</body>\n</html>",
+  "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\ntable {\n  border-collapse: collapse;\n  width: 100%;\n}\n\nth, td {\n  border: 1px solid lightgray;\n  padding: 12px;\n}\n\nth {\n  background-color: #04AA6D;\n  color: white;\n  text-align: left;\n}\n\ntr:nth-child(even) {\n  background-color: #f2f2f2;\n}\n</style>\n</head>\n<body>\n\n<table>\n  <tr><th>Name</th><th>Age</th><th>City</th></tr>\n  <tr><td>Alice</td><td>28</td><td>London</td></tr>\n  <tr><td>Bob</td><td>34</td><td>Paris</td></tr>\n  <tr><td>Carol</td><td>22</td><td>Berlin</td></tr>\n  <tr><td>Dave</td><td>45</td><td>Madrid</td></tr>\n</table>\n\n</body>\n</html>",
+  "checks": [
+    {
+      "description": "Uses border-collapse",
+      "pattern": "border-collapse\\s*:\\s*collapse"
+    },
+    {
+      "description": "Sets table width to 100%",
+      "pattern": "width\\s*:\\s*100%"
+    },
+    {
+      "description": "Adds borders to table cells",
+      "pattern": "border\\s*:\\s*1px\\s+solid"
+    },
+    {
+      "description": "Adds padding to table cells",
+      "pattern": "padding\\s*:\\s*12px"
+    },
+    {
+      "description": "Styles table header background",
+      "pattern": "background-color\\s*:\\s*#04AA6D"
+    },
+    {
+      "description": "Styles alternating rows",
+      "pattern": "nth-child\\(even\\)"
+    }
+  ]
+}
+  ]
