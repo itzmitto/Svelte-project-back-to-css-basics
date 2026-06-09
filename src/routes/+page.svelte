@@ -46,7 +46,7 @@
     return result;
   });
 
-  // Function to sync UI changes back to CodeMirror
+  // Function to sync UI changes back to CodeMirror hallo 
   function updateCSSFromControl(property: string, newValue: string | number, unit: string = '') {
     const replacement = `${newValue}${unit}`;
     const regex = new RegExp(`(${property}:\\s*)([^;]+)(;?)`, 'i');
@@ -58,7 +58,7 @@
       });
     }
   }
-</script>
+</script>  
 
 <div class="grid grid-rows-2 grid-cols-2 gap-8 p-8 h-full flex-1">
 
