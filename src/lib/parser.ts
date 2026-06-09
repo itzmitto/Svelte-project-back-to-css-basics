@@ -59,12 +59,20 @@ export function parseDeclaration(property: string, value: string): ControlGroup 
 				value: csstree.generate(node)
 			});
 		} else if (isLength || isNumber) {
+			// Determine the unit safely across node types
+			let unit: string | undefined = undefined;
+			if (node.type === 'Percentage') {
+				unit = '%';
+			} else if (node.unit) {
+				unit = node.unit;
+			}
+
 			controls.push({
 				property,
 				type: 'number',
 				label: prettifyProperty(property),
 				value: Number(node.value),
-				unit: node.unit || undefined
+				unit: unit
 			});
 		} else if (isKeyword && node.type === 'Identifier') {
 			// Fetch all options available for this specific layout property

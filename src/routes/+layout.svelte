@@ -21,7 +21,7 @@
 
 <div class="h-dvh flex flex-col">
   <header class="bg-gray-300 h-16 shadow-sm z-10"></header>
-  <div class="flex h-full overflow-hidden">
+  <div class="flex flex-1 overflow-hidden">
 
     <aside class="w-64 bg-gray-200 border-r border-gray-400 flex flex-col overflow-hidden">
       <h1 class="text-sm font-bold px-4 py-3 border-b border-gray-400 shadow-sm">
