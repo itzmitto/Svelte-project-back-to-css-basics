@@ -9,7 +9,7 @@
 
 <div class="h-dvh flex flex-col">
 	<header class="bg-gray-300 h-16 shadow-sm z-10"></header>
-	<div class="flex h-full">
+	<div class="flex flex-1">
 		<aside class="min-w-64 w-fit max-w-96 bg-gray-300"></aside>
 		{@render children()}
 	</div>
