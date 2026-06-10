@@ -97,5 +97,117 @@
       "pattern": "nth-child\\(even\\)"
     }
   ]
+},
+{
+  "id": 5,
+  "title": "CSS Selectors",
+  "description": "Complete the CSS to style paragraphs using an element selector, a class selector, and an ID selector.",
+  "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n/* element selector */\n/* class selector */\n/* id selector */\n</style>\n</head>\n<body>\n<p id=\"intro\">Welcome to CSS selectors.</p>\n<p>This is a normal paragraph.</p>\n<p class=\"highlight\">This paragraph is highlighted.</p>\n</body>\n</html>",
+  "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\np {\n  color: dimgray;\n}\n.highlight {\n  background-color: yellow;\n}\n#intro {\n  font-size: 20px;\n}\n</style>\n</head>\n<body>\n<p id=\"intro\">Welcome to CSS selectors.</p>\n<p>This is a normal paragraph.</p>\n<p class=\"highlight\">This paragraph is highlighted.</p>\n</body>\n</html>",
+  "checks": [
+    {
+      "description": "Uses element selector for paragraphs",
+      "pattern": "p\\s*\\{"
+    },
+    {
+      "description": "Sets paragraph color to dimgray",
+      "pattern": "color\\s*:\\s*dimgray"
+    },
+    {
+      "description": "Uses class selector for highlight",
+      "pattern": "\\.highlight\\s*\\{"
+    },
+    {
+      "description": "Sets highlight background to yellow",
+      "pattern": "background-color\\s*:\\s*yellow"
+    },
+    {
+      "description": "Uses ID selector for intro",
+      "pattern": "#intro\\s*\\{"
+    },
+    {
+      "description": "Sets intro font size to 20px",
+      "pattern": "font-size\\s*:\\s*20px"
+    }
+  ]
+},
+{
+  "id": 6,
+  "title": "CSS Colors",
+  "description": "Complete the CSS to color elements using three different methods: a color name, a hex value, and an RGB value.",
+  "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nh1 {\n  /* color name */\n}\nh2 {\n  /* hex value */\n}\np {\n  /* rgb value */\n}\n</style>\n</head>\n<body>\n<h1>Color Name</h1>\n<h2>Hex Value</h2>\n<p>RGB Value</p>\n</body>\n</html>",
+  "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nh1 {\n  color: Tomato;\n}\nh2 {\n  color: #1e90ff;\n}\np {\n  color: rgb(60, 179, 113);\n}\n</style>\n</head>\n<body>\n<h1>Color Name</h1>\n<h2>Hex Value</h2>\n<p>RGB Value</p>\n</body>\n</html>",
+  "checks": [
+    {
+      "description": "Styles h1 with a color name",
+      "pattern": "h1\\s*\\{[^}]*color\\s*:\\s*Tomato"
+    },
+    {
+      "description": "Sets h1 color to Tomato",
+      "pattern": "color\\s*:\\s*Tomato"
+    },
+    {
+      "description": "Styles h2 with a hex value",
+      "pattern": "h2\\s*\\{[^}]*color\\s*:\\s*#1e90ff"
+    },
+    {
+      "description": "Sets h2 color to #1e90ff",
+      "pattern": "color\\s*:\\s*#1e90ff"
+    },
+    {
+      "description": "Styles paragraph with an RGB value",
+      "pattern": "p\\s*\\{[^}]*color\\s*:\\s*rgb"
+    },
+    {
+      "description": "Sets paragraph color to rgb(60, 179, 113)",
+      "pattern": "color\\s*:\\s*rgb\\(60,\\s*179,\\s*113\\)"
+    }
+  ]
+},
+{
+  "id": 7,
+  "title": "CSS Display",
+  "description": "Complete the CSS to make list items display horizontally, spans display as block elements, and hide the paragraph with the class 'hidden'.",
+  "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nli {\n  /* make horizontal */\n}\nspan {\n  background-color: yellow;\n  /* make block */\n}\n.hidden {\n  /* hide completely */\n}\n</style>\n</head>\n<body>\n<ul>\n  <li>Home</li>\n  <li>About</li>\n  <li>Contact</li>\n</ul>\n<p>These spans are <span>now</span> <span>block</span> elements.</p>\n<p class=\"hidden\">This paragraph is hidden.</p>\n</body>\n</html>",
+  "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nli {\n  display: inline;\n}\nspan {\n  background-color: yellow;\n  display: block;\n}\n.hidden {\n  display: none;\n}\n</style>\n</head>\n<body>\n<ul>\n  <li>Home</li>\n  <li>About</li>\n  <li>Contact</li>\n</ul>\n<p>These spans are <span>now</span> <span>block</span> elements.</p>\n<p class=\"hidden\">This paragraph is hidden.</p>\n</body>\n</html>",
+  "checks": [
+    {
+      "description": "Sets list items to display inline",
+      "pattern": "li\\s*\\{[^}]*display\\s*:\\s*inline"
+    },
+    {
+      "description": "Sets spans to display block",
+      "pattern": "span\\s*\\{[^}]*display\\s*:\\s*block"
+    },
+    {
+      "description": "Hides the element with class hidden",
+      "pattern": "\\.hidden\\s*\\{[^}]*display\\s*:\\s*none"
+    }
+  ]
+},
+{
+  "id": 8,
+  "title": "CSS Position",
+  "description": "Complete the CSS to position the badge in the top-right corner of the container using relative and absolute positioning.",
+  "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.container {\n  width: 200px;\n  padding: 20px;\n  background-color: #f1f1f1;\n  border: 1px solid lightgray;\n  /* position */\n}\n.badge {\n  background-color: red;\n  color: white;\n  padding: 4px 8px;\n  border-radius: 50%;\n  font-size: 12px;\n  /* position, top, right */\n}\n</style>\n</head>\n<body>\n<div class=\"container\">\n  <span class=\"badge\">3</span>\n  <p>Notifications</p>\n</div>\n</body>\n</html>",
+  "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.container {\n  width: 200px;\n  padding: 20px;\n  background-color: #f1f1f1;\n  border: 1px solid lightgray;\n  position: relative;\n}\n.badge {\n  background-color: red;\n  color: white;\n  padding: 4px 8px;\n  border-radius: 50%;\n  font-size: 12px;\n  position: absolute;\n  top: -10px;\n  right: -10px;\n}\n</style>\n</head>\n<body>\n<div class=\"container\">\n  <span class=\"badge\">3</span>\n  <p>Notifications</p>\n</div>\n</body>\n</html>",
+  "checks": [
+    {
+      "description": "Sets container to position relative",
+      "pattern": "\\.container\\s*\\{[^}]*position\\s*:\\s*relative"
+    },
+    {
+      "description": "Sets badge to position absolute",
+      "pattern": "\\.badge\\s*\\{[^}]*position\\s*:\\s*absolute"
+    },
+    {
+      "description": "Sets badge top to -10px",
+      "pattern": "top\\s*:\\s*-10px"
+    },
+    {
+      "description": "Sets badge right to -10px",
+      "pattern": "right\\s*:\\s*-10px"
+    }
+  ]
 }
   ]
