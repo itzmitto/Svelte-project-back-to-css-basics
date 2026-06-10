@@ -209,5 +209,72 @@
       "pattern": "right\\s*:\\s*-10px"
     }
   ]
+},
+{
+  "id": 9,
+  "title": "CSS Box Model",
+  "description": "Complete the CSS to style the div with a width, padding, border, and margin to demonstrate all four parts of the CSS box model.",
+  "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\ndiv {\n  background-color: lightgray;\n  /* width */\n  /* padding (inside) */\n  /* border */\n  /* margin (outside) */\n}\n</style>\n</head>\n<body>\n<p>The CSS box model wraps every element: margin, border, padding, content.</p>\n<div>This box has all four parts of the box model.</div>\n</body>\n</html>",
+  "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\ndiv {\n  background-color: lightgray;\n  width: 300px;\n  padding: 25px;\n  border: 5px solid navy;\n  margin: 20px;\n}\n</style>\n</head>\n<body>\n<p>The CSS box model wraps every element: margin, border, padding, content.</p>\n<div>This box has all four parts of the box model.</div>\n</body>\n</html>",
+  "checks": [
+    {
+      "description": "Sets width to 300px",
+      "pattern": "width\\s*:\\s*300px"
+    },
+    {
+      "description": "Sets padding to 25px",
+      "pattern": "padding\\s*:\\s*25px"
+    },
+    {
+      "description": "Sets border to 5px solid navy",
+      "pattern": "border\\s*:\\s*5px\\s+solid\\s+navy"
+    },
+    {
+      "description": "Sets margin to 20px",
+      "pattern": "margin\\s*:\\s*20px"
+    }
+  ]
+},
+{
+  "id": 10,
+  "title": "CSS Flexbox",
+  "description": "Complete the CSS to make the container a flexbox that displays its children in a row with a gap of 10px between them.",
+  "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.container {\n  background-color: #f1f1f1;\n  padding: 10px;\n  /* display, flex-direction, gap */\n}\n.container > div {\n  background-color: #04AA6D;\n  color: white;\n  padding: 20px;\n  text-align: center;\n}\n</style>\n</head>\n<body>\n<div class=\"container\">\n  <div>1</div>\n  <div>2</div>\n  <div>3</div>\n</div>\n</body>\n</html>",
+  "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.container {\n  background-color: #f1f1f1;\n  padding: 10px;\n  display: flex;\n  flex-direction: row;\n  gap: 10px;\n}\n.container > div {\n  background-color: #04AA6D;\n  color: white;\n  padding: 20px;\n  text-align: center;\n}\n</style>\n</head>\n<body>\n<div class=\"container\">\n  <div>1</div>\n  <div>2</div>\n  <div>3</div>\n</div>\n</body>\n</html>",
+  "checks": [
+    {
+      "description": "Sets container to display flex",
+      "pattern": "\\.container\\s*\\{[^}]*display\\s*:\\s*flex"
+    },
+    {
+      "description": "Sets flex-direction to row",
+      "pattern": "flex-direction\\s*:\\s*row"
+    },
+    {
+      "description": "Sets gap to 10px",
+      "pattern": "gap\\s*:\\s*10px"
+    }
+  ]
+},
+{
+  "id": 11,
+  "title": "CSS Grid",
+  "description": "Complete the CSS to make the container a grid with three equal columns and a gap of 10px between the items.",
+  "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.grid-container {\n  background-color: #f1f1f1;\n  padding: 10px;\n  /* display, grid-template-columns, gap */\n}\n.grid-container > div {\n  background-color: #04AA6D;\n  color: white;\n  padding: 20px;\n  text-align: center;\n}\n</style>\n</head>\n<body>\n<div class=\"grid-container\">\n  <div>1</div>\n  <div>2</div>\n  <div>3</div>\n  <div>4</div>\n  <div>5</div>\n  <div>6</div>\n</div>\n</body>\n</html>",
+  "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n.grid-container {\n  background-color: #f1f1f1;\n  padding: 10px;\n  display: grid;\n  grid-template-columns: auto auto auto;\n  gap: 10px;\n}\n.grid-container > div {\n  background-color: #04AA6D;\n  color: white;\n  padding: 20px;\n  text-align: center;\n}\n</style>\n</head>\n<body>\n<div class=\"grid-container\">\n  <div>1</div>\n  <div>2</div>\n  <div>3</div>\n  <div>4</div>\n  <div>5</div>\n  <div>6</div>\n</div>\n</body>\n</html>",
+  "checks": [
+    {
+      "description": "Sets container to display grid",
+      "pattern": "\\.grid-container\\s*\\{[^}]*display\\s*:\\s*grid"
+    },
+    {
+      "description": "Sets grid-template-columns to three columns",
+      "pattern": "grid-template-columns\\s*:\\s*auto\\s+auto\\s+auto"
+    },
+    {
+      "description": "Sets gap to 10px",
+      "pattern": "gap\\s*:\\s*10px"
+    }
+  ]
 }
   ]
