@@ -276,5 +276,34 @@
       "pattern": "gap\\s*:\\s*10px"
     }
   ]
+},
+{
+  "id": 12,
+  "title": "CSS Lists",
+  "description": "Complete the CSS to remove the list bullets and padding from the ul, then style each list item with padding, a light gray background, and a small bottom margin.",
+  "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nul {\n  /* list-style-type and padding */\n}\n/* add li rule here */\n</style>\n</head>\n<body>\n<h2>Navigation Menu</h2>\n<ul>\n  <li>Home</li>\n  <li>About</li>\n  <li>Services</li>\n  <li>Contact</li>\n</ul>\n</body>\n</html>",
+  "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nul {\n  list-style-type: none;\n  padding: 0;\n}\nli {\n  padding: 8px 16px;\n  background-color: #f1f1f1;\n  margin-bottom: 2px;\n}\n</style>\n</head>\n<body>\n<h2>Navigation Menu</h2>\n<ul>\n  <li>Home</li>\n  <li>About</li>\n  <li>Services</li>\n  <li>Contact</li>\n</ul>\n</body>\n</html>",
+  "checks": [
+    {
+      "description": "Removes list bullets with list-style-type none",
+      "pattern": "list-style-type\\s*:\\s*none"
+    },
+    {
+      "description": "Sets ul padding to 0",
+      "pattern": "ul\\s*\\{[^}]*padding\\s*:\\s*0"
+    },
+    {
+      "description": "Adds padding to list items",
+      "pattern": "li\\s*\\{[^}]*padding\\s*:\\s*8px\\s+16px"
+    },
+    {
+      "description": "Sets list item background color to #f1f1f1",
+      "pattern": "background-color\\s*:\\s*#f1f1f1"
+    },
+    {
+      "description": "Adds bottom margin to list items",
+      "pattern": "margin-bottom\\s*:\\s*2px"
+    }
+  ]
 }
   ]
