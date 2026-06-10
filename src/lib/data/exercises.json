@@ -305,5 +305,134 @@
       "pattern": "margin-bottom\\s*:\\s*2px"
     }
   ]
-}
+},
+{
+  "id": 13,
+  "title": "CSS Transform",
+  "description": "Complete the CSS to rotate the first box 20 degrees, scale the second box to 1.5x its size, and translate the third box 50px to the right and 20px down.",
+  "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\ndiv {\n  width: 100px;\n  height: 100px;\n  background-color: #04AA6D;\n  color: white;\n  margin: 40px;\n  display: inline-block;\n  text-align: center;\n  line-height: 100px;\n}\n#rotate {\n  /* rotate */\n}\n#scale {\n  /* scale */\n}\n#translate {\n  /* translate */\n}\n</style>\n</head>\n<body>\n<div id=\"rotate\">Rotate</div>\n<div id=\"scale\">Scale</div>\n<div id=\"translate\">Move</div>\n</body>\n</html>",
+  "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\ndiv {\n  width: 100px;\n  height: 100px;\n  background-color: #04AA6D;\n  color: white;\n  margin: 40px;\n  display: inline-block;\n  text-align: center;\n  line-height: 100px;\n}\n#rotate {\n  transform: rotate(20deg);\n}\n#scale {\n  transform: scale(1.5);\n}\n#translate {\n  transform: translate(50px, 20px);\n}\n</style>\n</head>\n<body>\n<div id=\"rotate\">Rotate</div>\n<div id=\"scale\">Scale</div>\n<div id=\"translate\">Move</div>\n</body>\n</html>",
+  "checks": [
+    {
+      "description": "Rotates the rotate box 20 degrees",
+      "pattern": "#rotate\\s*\\{[^}]*transform\\s*:\\s*rotate\\(20deg\\)"
+    },
+    {
+      "description": "Scales the scale box to 1.5",
+      "pattern": "#scale\\s*\\{[^}]*transform\\s*:\\s*scale\\(1\\.5\\)"
+    },
+    {
+      "description": "Translates the translate box",
+      "pattern": "#translate\\s*\\{[^}]*transform\\s*:\\s*translate\\(50px,\\s*20px\\)"
+    }
   ]
+},
+{
+  "id": 14,
+  "title": "CSS Animation met Keyframes",
+  "description": "Maak een animatie waarbij de box van links naar rechts glijdt (200px) en van rood naar blauw verandert. Gebruik de shorthand `animation` en definieer de @keyframes 'slide'.",
+  "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\ndiv {\n  width: 100px;\n  height: 100px;\n  color: white;\n  text-align: center;\n  line-height: 100px;\n  position: relative;\n  /* animation shorthand */\n}\n/* @keyframes slide { ... } */\n</style>\n</head>\n<body>\n<div>Slide!</div>\n</body>\n</html>",
+  "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\ndiv {\n  width: 100px;\n  height: 100px;\n  color: white;\n  text-align: center;\n  line-height: 100px;\n  position: relative;\n  animation: slide 2s infinite;\n}\n@keyframes slide {\n  0% { background-color: red; left: 0px; }\n  100% { background-color: blue; left: 200px; }\n}\n</style>\n</head>\n<body>\n<div>Slide!</div>\n</body>\n</html>",
+  "checks": [
+    {
+      "description": "De div heeft een animation property met slide",
+      "pattern": "animation:\\s*slide\\s+2s\\s+infinite"
+    },
+    {
+      "description": "@keyframes slide is gedefinieerd",
+      "pattern": "@keyframes\\s+slide\\s*\\{"
+    },
+    {
+      "description": "0% keyframe met rode achtergrond en left: 0px",
+      "pattern": "0%\\s*\\{[^}]*background-color:\\s*red[^}]*left:\\s*0px"
+    },
+    {
+      "description": "100% keyframe met blauwe achtergrond en left: 200px",
+      "pattern": "100%\\s*\\{[^}]*background-color:\\s*blue[^}]*left:\\s*200px"
+    }
+  ]
+},
+{
+  "id": 15,
+  "title": "Responsive Card with Media & Container Queries",
+  "description": "Maak een responsive kaart die er goed uitziet op zowel mobiel als desktop. Gebruik media queries, container queries en aspect-ratio.",
+  "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nbody {\n  font-family: Arial, sans-serif;\n  padding: 20px;\n}\n\n.card {\n  border: 2px solid #ddd;\n  padding: 16px;\n  max-width: 400px;\n  margin: 0 auto;\n}\n\n.image {\n  background: #ccc;\n  /* aspect-ratio komt hier */\n}\n\n/* Media query komt hier */\n\n/* Container query komt hier */\n</style>\n</head>\n<body>\n\n<div class=\"card\">\n  <div class=\"image\">Afbeelding</div>\n  <h2>Responsieve Kaart</h2>\n  <p>Dit is een voorbeeld van een responsive ontwerp met moderne CSS-technieken.</p>\n  <button>Meer info</button>\n</div>\n\n</body>\n</html>",
+  "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\nbody {\n  font-family: Arial, sans-serif;\n  padding: 20px;\n}\n\n.card {\n  border: 2px solid #ddd;\n  padding: 16px;\n  max-width: 400px;\n  margin: 0 auto;\n  container-type: inline-size;\n}\n\n.image {\n  background: #333;\n  color: white;\n  height: 200px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 1.2rem;\n  aspect-ratio: 16 / 9;\n}\n\n/* Media Query */\n@media (max-width: 600px) {\n  .card {\n    max-width: 100%;\n    padding: 12px;\n  }\n  .image {\n    height: auto;\n  }\n}\n\n/* Container Query */\n@container (min-width: 300px) {\n  h2 {\n    font-size: 1.5rem;\n  }\n  p {\n    font-size: 1.1rem;\n  }\n}\n</style>\n</head>\n<body>\n\n<div class=\"card\">\n  <div class=\"image\">Afbeelding</div>\n  <h2>Responsieve Kaart</h2>\n  <p>Dit is een voorbeeld van een responsive ontwerp met moderne CSS-technieken.</p>\n  <button>Meer info</button>\n</div>\n\n</body>\n</html>",
+  "checks": [
+    {
+      "description": "Bevat een media query",
+      "pattern": "@media"
+    },
+    {
+      "description": "Bevat een container query",
+      "pattern": "@container"
+    },
+    {
+      "description": "Gebruikt aspect-ratio",
+      "pattern": "aspect-ratio"
+    },
+    {
+      "description": "Container-type is ingesteld",
+      "pattern": "container-type"
+    },
+    {
+      "description": "Responsive aanpassing op kleine schermen",
+      "pattern": "max-width: 600px|@media.*max-width"
+    }
+  ]
+},
+{
+  "id": 16,
+  "title": "Text Overflow, Ellipsis & Word Wrapping",
+  "description": "Maak een lange tekst die met een ellipsis (...) eindigt en zorg dat een lang woord netjes afbreekt binnen de container.",
+  "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\np {\n  width: 200px;\n  border: 1px solid silver;\n  padding: 10px;\n  /* text-overflow, white-space, overflow */\n}\n\nh1 {\n  width: 200px;\n  border: 1px solid silver;\n  /* word-wrap / word-break */\n}\n</style>\n</head>\n<body>\n\n<p>This is a long paragraph that will overflow the container and should show an ellipsis.</p>\n<h1>Thisisaverylongwordthatwillnotfitinsidethebox</h1>\n\n</body>\n</html>",
+  "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\np {\n  width: 200px;\n  border: 1px solid silver;\n  padding: 10px;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n}\n\nh1 {\n  width: 200px;\n  border: 1px solid silver;\n  word-wrap: break-word;\n  overflow-wrap: break-word;\n}\n</style>\n</head>\n<body>\n\n<p>This is a long paragraph that will overflow the container and should show an ellipsis.</p>\n<h1>Thisisaverylongwordthatwillnotfitinsidethebox</h1>\n\n</body>\n</html>",
+  "checks": [
+    {
+      "description": "Heeft text-overflow: ellipsis",
+      "pattern": "text-overflow:\\s*ellipsis"
+    },
+    {
+      "description": "Gebruikt white-space: nowrap",
+      "pattern": "white-space:\\s*nowrap"
+    },
+    {
+      "description": "Heeft overflow: hidden",
+      "pattern": "overflow:\\s*hidden"
+    },
+    {
+      "description": "Woord breekt af (word-wrap of overflow-wrap)",
+      "pattern": "word-wrap:\\s*break-word|overflow-wrap:\\s*break-word"
+    },
+    {
+      "description": "Paragraaf heeft de juiste overflow eigenschappen",
+      "pattern": "text-overflow|white-space|overflow"
+    }
+  ]
+},
+{
+  "id": 17,
+  "title": "Resizable Elements",
+  "description": "Maak een textarea die alleen horizontaal vergroot kan worden en een div die in beide richtingen resizable is (met scroll als nodig).",
+  "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\ntextarea {\n  width: 300px;\n  height: 80px;\n  /* resize horizontal only */\n}\n\ndiv {\n  border: 2px solid silver;\n  padding: 20px;\n  width: 300px;\n  /* resize both and overflow */\n}\n</style>\n</head>\n<body>\n\n<textarea>Resize me horizontally!</textarea><br><br>\n<div>Resize me in both directions!</div>\n\n</body>\n</html>",
+  "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n<style>\ntextarea {\n  width: 300px;\n  height: 80px;\n  resize: horizontal;\n}\n\ndiv {\n  border: 2px solid silver;\n  padding: 20px;\n  width: 300px;\n  resize: both;\n  overflow: auto;\n}\n</style>\n</head>\n<body>\n\n<textarea>Resize me horizontally!</textarea><br><br>\n<div>Resize me in both directions!</div>\n\n</body>\n</html>",
+  "checks": [
+    {
+      "description": "Textarea heeft resize: horizontal",
+      "pattern": "textarea\\s*\\{[^}]*resize:\\s*horizontal"
+    },
+    {
+      "description": "Div heeft resize: both",
+      "pattern": "div\\s*\\{[^}]*resize:\\s*both"
+    },
+    {
+      "description": "Div heeft overflow: auto",
+      "pattern": "overflow:\\s*auto"
+    },
+    {
+      "description": "Resize eigenschap wordt gebruikt",
+      "pattern": "resize:\\s*(horizontal|both)"
+    }
+  ]
+}
+]
