@@ -27,6 +27,21 @@ export default defineConfig({
 			workbox: {
 				globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg,gif,webp,woff,woff2,eot,ttf,otf}'],
 				navigateFallback: '/',
+
+				runtimeCaching: [
+					{
+						urlPattern: ({ request }) => request.mode === 'navigate',
+						handler: 'NetworkFirst',
+						options: {
+							cacheName: 'page-cache',
+							expiration: {
+								maxEntries: 10,
+								maxAgeSeconds: 60 * 60 * 24 * 7, // 1 week
+							},
+							networkTimeoutSeconds: 3
+						}
+					}
+				]
 			}
 		})
 	]
