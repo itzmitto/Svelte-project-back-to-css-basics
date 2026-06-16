@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<title>Back To Basics</title>
 </svelte:head>
 
 {@render children()}

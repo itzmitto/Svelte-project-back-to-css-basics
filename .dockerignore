@@ -1,0 +1,11 @@
+.DS_Store
+.env
+.env.*
+.git
+.github
+.svelte-kit/
+build/
+node_modules/
+.yarn/
+yarn-error.log
+README.md
