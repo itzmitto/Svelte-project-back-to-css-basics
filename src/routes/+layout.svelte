@@ -2,8 +2,6 @@
 	import { onMount } from 'svelte';
 	import './layout.css';
 
-	export const prerender = true;
-
 	let { children } = $props();
 
 	onMount(async () => {
