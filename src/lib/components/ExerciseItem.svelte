@@ -129,7 +129,7 @@
 			bind:this={editorElement}
 			class="flex-1 overflow-auto [&>.cm-editor]:h-full [&>.cm-editor]:min-h-full"
 		></div>
-	</div>
+	</div> 
 
 	<!-- Right: result -->
 	<div class="flex flex-col w-1/2 bg-white border-l border-gray-300">
