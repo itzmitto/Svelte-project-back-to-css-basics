@@ -1,7 +1,6 @@
 <div class="viewport">
 	<div class="camera-container">
 		<video id="preview-video" autoplay playsinline class="video-feed"></video>
-
 		<div class="viewfinder-overlay">
 			<div class="corner top-left"></div>
 			<div class="corner top-right"></div>
@@ -9,12 +8,9 @@
 			<div class="corner bottom-right"></div>
 			<div class="center-dot"></div>
 		</div>
-
 		<button class="capture-button" onclick="
             navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } })
-                .then(stream => {
-                    document.getElementById('preview-video').srcObject = stream;
-                })
+                .then(stream => { document.getElementById('preview-video').srcObject = stream; })
                 .catch(err => alert('Camera access denied or requires HTTPS'));
         ">
 			Start Lens

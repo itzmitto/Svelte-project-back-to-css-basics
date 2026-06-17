@@ -9,10 +9,12 @@
 
 .camera-container {
   position: relative;
-  width: 18rem;
-  height: 24rem;
+  /* Responsive sizing bounds */
+  width: 90%;
+  max-width: 20rem;
+  aspect-ratio: 3 / 4;
   background-color: #1e293b;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   overflow: hidden;
 }
 
@@ -38,13 +40,13 @@
   height: 1rem;
   border-color: #ffffff;
   border-style: solid;
-  border-width: 0rem;
+  border-width: 0;
 }
 
-.top-left { top: 2rem; left: 2rem; border-top-width: 2px; border-left-width: 2px; }
-.top-right { top: 2rem; right: 2rem; border-top-width: 2px; border-right-width: 2px; }
-.bottom-left { bottom: 6rem; left: 2rem; border-bottom-width: 2px; border-left-width: 2px; }
-.bottom-right { bottom: 6rem; right: 2rem; border-bottom-width: 2px; border-right-width: 2px; }
+.top-left { top: 1.5rem; left: 1.5rem; border-top-width: 2px; border-left-width: 2px; }
+.top-right { top: 1.5rem; right: 1.5rem; border-top-width: 2px; border-right-width: 2px; }
+.bottom-left { bottom: 4.5rem; left: 1.5rem; border-bottom-width: 2px; border-left-width: 2px; }
+.bottom-right { bottom: 4.5rem; right: 1.5rem; border-bottom-width: 2px; border-right-width: 2px; }
 
 .center-dot {
   position: absolute;
@@ -59,13 +61,11 @@
 
 .capture-button {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  /* Cleaned up shorthand */
+  padding: 0.75rem 1.5rem;
   background-color: #ffffff;
   color: #000000;
   font-family: sans-serif;

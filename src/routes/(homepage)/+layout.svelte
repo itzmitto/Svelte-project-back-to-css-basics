@@ -14,7 +14,7 @@
 </script>
 
 <div class="h-dvh flex flex-col">
-	<header class="bg-gray-300 h-16 shadow-sm z-10 shrink-0"></header>
+	<header class="bg-gray-300 h-16 shadow-sm z-10 shrink-0 hidden md:visible"></header>
 
 	<div class="flex flex-1 overflow-hidden">
 

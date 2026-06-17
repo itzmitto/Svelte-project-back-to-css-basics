@@ -192,7 +192,7 @@
 
 	<!-- ── Panels area ───────────────────────────────────────────────────── -->
 	<div class="
-		h-[calc(100dvh-8rem)] md:h-full
+		h-[calc(100dvh-4rem)] md:h-full
 		flex flex-col gap-4 p-4
 		md:grid md:grid-cols-2 md:grid-rows-2 md:p-8 md:gap-4
 	">
