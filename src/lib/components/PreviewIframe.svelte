@@ -41,7 +41,7 @@
 	}
 
 	// Runs on every html/css change. On first mount the iframe isn't loaded
-	// yet so this is a no-op — onload handles that case. On subsequent prop
+	// yet, so this is a no-op — onload handles that case. On subsequent prop
 	// changes (user typing, control changes) the iframe IS loaded, so it works.
 	$effect(() => {
 		// Reading html and css here registers them as dependencies
