@@ -54,6 +54,7 @@
 	bind:this={iframeElement}
 	srcdoc={baseSrcDoc}
 	onload={injectContent}
+	allow="vibrate"
 	sandbox="allow-scripts allow-same-origin"
 	title="CSS Preview Sandbox"
 	class="w-full h-full border-0 block bg-white"
