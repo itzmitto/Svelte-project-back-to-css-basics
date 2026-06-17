@@ -9,6 +9,24 @@
             <meta charset="UTF-8">
             <style>body { margin: 0; font-family: sans-serif; }</style>
             <style id="live-preview-styles"></style>
+            <script>
+            	if (window.navigation) {
+								window.navigation.addEventListener('navigate', (event) => {
+									event.preventDefault();
+									console.warn('Navigation blocked inside sandbox:', event.destination.url);
+								});
+            	}
+
+							document.addEventListener('click', (event) => {
+								if (event.target.tagName != null) {
+									if (event.target.tagName === 'a') {
+											event.preventDefault();
+											console.warn('Navigation blocked inside sandbox:', event.target.getAttribute('href'));
+									}
+
+								}
+							});
+						<\/script>
         </head>
         <body id="live-preview-body"></body>
         </html>

@@ -1,0 +1,57 @@
+.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #0f172a;
+}
+
+.control-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 18rem;
+  padding: 1rem;
+  background-color: #1e293b;
+  border-radius: 0.75rem;
+}
+
+.setting-label {
+  font-family: sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 2.75rem;
+  height: 1.5rem;
+  background-color: #475569;
+  border-radius: 9999px;
+  border-style: none;
+  cursor: pointer;
+  padding: 0rem;
+  transition: background-color 0.2s;
+}
+
+.toggle-knob {
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+/* JavaScript triggers this class mutation on click */
+.toggle-switch.is-active {
+  background-color: #22c55e;
+}
+
+.toggle-switch.is-active .toggle-knob {
+  transform: translateX(1.25rem);
+}

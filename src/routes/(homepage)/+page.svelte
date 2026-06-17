@@ -45,6 +45,8 @@
 	export const examples = buildExamples();
 	export const exampleNames = Object.keys(examples);
 
+	console.log(exampleNames);
+
 	// --- Reactive state ---
 
 	let activeTab = $state<'css' | 'html'>('css');
@@ -136,6 +138,7 @@
 		htmlState = makeHtmlState(example.html);
 		cssContent = cssState.doc.toString();
 		htmlContent = htmlState.doc.toString();
+		updateTick();
 		if (view) {
 			view.setState(activeTab === 'css' ? cssState : htmlState);
 		}
@@ -199,6 +202,13 @@
 			flex-1 min-h-0 rounded-md overflow-hidden
 			md:flex-none md:col-start-2 md:row-start-1 md:row-span-2
 		">
+			<div>
+				<select onchange={(e) => setExample(e.currentTarget.value)} class="">
+					{#each exampleNames as name}
+						<option value={name}>{name}</option>
+					{/each}
+				</select>
+			</div>
 			<PreviewIframe css={cssContent} html={htmlContent} />
 		</div>
 
