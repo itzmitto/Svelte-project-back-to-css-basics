@@ -1,0 +1,29 @@
+<div class="viewport">
+	<div class="level-board">
+		<div id="bubble-node" class="bubble" style="--x: 0px; --y: 0px;"></div>
+		<div class="center-target"></div>
+		<button id="motion-btn" class="motion-trigger" onclick="
+            const target = document.getElementById('bubble-node');
+            if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+                DeviceOrientationEvent.requestPermission()
+                    .then(state => {
+                        if (state === 'granted') {
+                            document.getElementById('motion-btn').style.display = 'none';
+                            window.addEventListener('deviceorientation', (e) => {
+                                target.style.setProperty('--x', (e.gamma * 1.2) + 'px');
+                                target.style.setProperty('--y', (e.beta * 1.2) + 'px');
+                            });
+                        }
+                    });
+            } else {
+                document.getElementById('motion-btn').style.display = 'none';
+                window.addEventListener('deviceorientation', (e) => {
+                    target.style.setProperty('--x', (e.gamma * 1.2) + 'px');
+                    target.style.setProperty('--y', (e.beta * 1.2) + 'px');
+                });
+            }
+        ">
+			Calibrate Gyro
+		</button>
+	</div>
+</div>
