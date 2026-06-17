@@ -17,7 +17,12 @@ export default defineConfig({
 				theme_color: '#ffffff',
 				icons: [
 					{
-						src: '/favicon.png',
+						src: '/icons/icon-192.png',
+						sizes: '192x192',
+						type: 'image/png'
+					},
+					{
+						src: '/icons/icon-512.png',
 						sizes: '512x512',
 						type: 'image/png'
 					}
@@ -36,7 +41,7 @@ export default defineConfig({
 							cacheName: 'page-cache',
 							expiration: {
 								maxEntries: 10,
-								maxAgeSeconds: 60 * 60 * 24 * 7, // 1 week
+								maxAgeSeconds: 60 * 60 * 24 * 7 // 1 week
 							},
 							networkTimeoutSeconds: 3
 						}
