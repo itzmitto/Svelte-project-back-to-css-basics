@@ -5,14 +5,13 @@
 	let { children } = $props();
 
 	onMount(async () => {
-		// Double check we are explicitly in a secure browser context
+		// dit is de service worker die er voor zorgt dat deze website / app offline gebruikt kan worden
 		if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+
+			// https://vite-pwa-org.netlify.app/frameworks/svelte.html
 			const { registerSW } = await import('virtual:pwa-register');
 			registerSW({
-				immediate: true,
-				onOfflineReady() {
-					console.log('Success! Your CSS Editor works offline!');
-				}
+				immediate: true
 			});
 		}
 	});

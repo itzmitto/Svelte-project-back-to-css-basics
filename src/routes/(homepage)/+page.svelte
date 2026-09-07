@@ -167,30 +167,9 @@
 	}
 </script>
 
-<!-- ASSI LAYOUT
-	Mobile layout  (flex-col, top→bottom):
-	  ┌─────────────┐  ← Preview    always visible, flex-1
-	  │   Preview   │
-	  ├─────────────┤  ← Editor OR Controls, flex-1
-	  │ Editor/Ctrl │
-	  └─────────────┘
-	  [ Code ][ Controls ]  ← fixed bottom nav, 2 tabs
-
-	Desktop layout  (2×2 grid, explicit placement):
-	  ┌──────────┬──────────┐
-	  │  Editor  │         │
-	  ├──────────┤ Preview │
-	  │ Controls │         │
-	  └──────────┴──────────┘
-
-	DOM order is Preview → Editor → Controls so that Preview sits on
-	top naturally in the mobile flex column. Desktop grid uses
-	col-start / row-start to restore the expected visual order.
--->
-
 <div class="overflow-y-auto flex-1 h-full pb-16 md:pb-0">
 
-	<!-- ── Panels area ───────────────────────────────────────────────────── -->
+	<!--── Panels area ─────────────────────────────────────────────────────-->
 	<div class="
 		h-[calc(100dvh-4rem)] md:h-full
 		flex flex-col gap-4 p-4

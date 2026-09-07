@@ -7,6 +7,7 @@ export default defineConfig({
 	plugins: [
 		tailwindcss(),
 		sveltekit(),
+		// deze plugin zorgt ervoor dat de app gedownload kan worden.
 		SvelteKitPWA({
 			registerType: 'autoUpdate',
 
