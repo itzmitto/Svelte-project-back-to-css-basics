@@ -1,16 +1,7 @@
 <script lang="ts">
 	import cssData from '$lib/data/properties.json';
+	import { goto } from '$app/navigation';
 	let { children } = $props();
-	let openCategories = $state<Set<number>>(new Set());
-
-	function toggleCategory(index: number) {
-		if (openCategories.has(index)) {
-			openCategories.delete(index);
-		} else {
-			openCategories.add(index);
-		}
-		openCategories = new Set(openCategories);
-	}
 </script>
 
 <div class="h-dvh flex flex-col">
@@ -27,23 +18,11 @@
 				{#each cssData.categories as category, i}
 					<div>
 						<button
-							onclick={() => toggleCategory(i)}
 							class="w-full text-left px-4 py-2 text-sm font-semibold flex justify-between items-center hover:bg-gray-300 transition-colors"
+							onclick={() => goto(category.route)}
 						>
 							<span>{category.title}</span>
-							<span class="text-gray-500 text-xs">{openCategories.has(i) ? '▲' : '▼'}</span>
 						</button>
-						{#if openCategories.has(i)}
-							<ul class="bg-gray-100">
-								{#each category.properties as property}
-									<li>
-										<button class="w-full text-left px-6 py-1.5 text-xs font-mono hover:bg-gray-300 hover:translate-x-1 transition-all">
-											{property}
-										</button>
-									</li>
-								{/each}
-							</ul>
-						{/if}
 					</div>
 				{/each}
 			</nav>

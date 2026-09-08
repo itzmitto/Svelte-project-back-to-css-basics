@@ -1,71 +1,83 @@
 {
   "categories": [
     {
-      "title": "1. Selectors",
-      "properties": ["element", "class", "id", "attribute selectors", "pseudo-classes", "pseudo-elements"]
-    },
-    {
-      "title": "2. Colors & Backgrounds",
+      "title": "Colors & Backgrounds",
+			"route": "/background",
       "properties": ["color", "background", "background-color", "background-image", "background-size", "background-position"]
     },
     {
-      "title": "3. Text & Fonts",
+      "title": "Text & Fonts",
+			"route": "/text",
       "properties": ["font-family", "font-size", "font-weight", "line-height", "text-align", "text-decoration", "text-transform"]
     },
     {
-      "title": "4. Box Model",
+      "title": "Box Model",
+			"route": "/box",
       "properties": ["width", "height", "margin", "padding", "border", "box-sizing"]
     },
     {
-      "title": "5. Display & Visibility",
+      "title": "Display & Visibility",
+			"route": "/display",
       "properties": ["display", "visibility", "opacity", "overflow"]
     },
     {
-      "title": "6. Positioning",
+      "title": "Positioning",
+			"route": "/positioning",
       "properties": ["position", "top", "right", "bottom", "left", "z-index"]
     },
     {
-      "title": "7. Flexbox",
+      "title": "Flexbox",
+			"route": "/flexbox",
       "properties": ["display: flex", "flex-direction", "justify-content", "align-items", "flex-wrap", "gap"]
     },
     {
-      "title": "8. Grid",
+      "title": "Grid",
+			"route": "/grid",
       "properties": ["display: grid", "grid-template-columns", "grid-template-rows", "grid-area", "gap"]
     },
     {
-      "title": "9. Lists",
+      "title": "Lists",
+			"route": "/lists",
       "properties": ["list-style", "list-style-type", "list-style-position"]
     },
     {
-      "title": "10. Tables",
+      "title": "Tables",
+			"route": "/tables",
       "properties": ["border-collapse", "border-spacing", "table-layout"]
     },
     {
-      "title": "11. Transforms",
+      "title": "Transforms",
+			"route": "/transform",
       "properties": ["transform", "transform-origin"]
     },
     {
-      "title": "12. Transitions",
+      "title": "Transitions",
+			"route": "/transitions",
       "properties": ["transition", "transition-duration", "transition-delay"]
     },  
     {
-      "title": "13. Animations",
+      "title": "Animations",
+			"route": "/animations",
       "properties": ["animation", "animation-name", "animation-duration", "animation-timing-function"]
     },
     {
-      "title": "14. Responsive Design",
+      "title": "Responsive Design",
+			"route": "/responsive",
       "properties": ["media queries", "container queries", "aspect-ratio"]
     },
     {
-      "title": "15. Effects",
+      "title": "Effects",
+			"route": "/effects",
       "properties": ["box-shadow", "text-shadow", "filter", "backdrop-filter"]
     },
     {
-      "title": "16. Cursor & User Interaction",
+      "title": "Cursor & User Interaction",
+			"route": "/cursor",
       "properties": ["cursor", "pointer-events", "user-select"]
     },
     {
-      "title": "17. Advanced Layout",
+      "title": "Advanced Layout",
+			"route": "/advanced",
       "properties": ["float", "clear", "object-fit", "object-position"]
     }
   ]
