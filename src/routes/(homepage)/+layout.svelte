@@ -11,14 +11,14 @@
 
 		<!-- Sidebar: hidden on mobile, shown on md+ -->
 		<aside class="w-64 bg-gray-200 border-r border-gray-400 hidden md:flex flex-col overflow-hidden shrink-0">
-			<h1 class="text-sm font-bold px-4 py-3 border-b border-gray-400 shadow-sm">
+			<button onclick={() => goto('/')} class="text-sm font-bold px-4 py-3 border-b border-gray-400 shadow-sm cursor-pointer">
 				CSS Basics
-			</h1>
+			</button>
 			<nav class="flex-1 overflow-y-auto">
 				{#each cssData.categories as category, i}
 					<div>
 						<button
-							class="w-full text-left px-4 py-2 text-sm font-semibold flex justify-between items-center hover:bg-gray-300 transition-colors"
+							class="w-full text-left px-4 py-2 text-sm font-semibold flex justify-between items-center hover:bg-gray-300 transition-colors cursor-pointer"
 							onclick={() => goto(category.route)}
 						>
 							<span>{category.title}</span>
