@@ -9,9 +9,9 @@
 
 .camera-container {
   position: relative;
-  width: 90%;
+  width: 80%;
   max-width: 20rem;
-  aspect-ratio: 3 / 4; /* Maintains a consistent camera aspect ratio */
+  aspect-ratio: 1 / 1; /* Maintains a consistent camera aspect ratio */
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);

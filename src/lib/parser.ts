@@ -97,8 +97,8 @@ export function parseDeclaration(property: string, value: string): ControlGroup 
 }
 
 /**
- * Smart helper that extracts all valid keyword strings for a given property.
- * It recursively unpacks linked CSS types (like turning <display-inside> into 'flex', 'grid', etc.)
+ * helper that extracts valid keyword strings for a property.
+ * It unpacks linked CSS types (like turning <display> into flex, grid, etc.)
  */
 function getPropertyOptions(property: string): string[] {
 	const keywords = new Set<string>();
